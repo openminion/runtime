@@ -1,0 +1,16 @@
+.DS_Store
+*.log
+*.pyc
+__pycache__/
+
+# Release assets belong in GitHub Releases, never in Git.
+*.AppImage
+*.deb
+*.dmg
+*.exe
+*.msi
+*.rpm
+*.tar
+*.tar.gz
+*.tgz
+*.zip
