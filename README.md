@@ -31,11 +31,15 @@ committed to this Git repository.
 | Release | Producer | Contents | Consumer |
 | --- | --- | --- | --- |
 | `runtime-v<version>-build.<number>` | private `openminion-packaging` workflow | paired `openminion` and `openminiond` executables for each qualified platform | OpenMinion Desktop and direct CLI users |
+| `runtime-dev-v<version>-build.<number>` | private `openminion-packaging` workflow | unsigned paired executables and verification sidecars for macOS, Linux, and Windows | Development testing and direct downloads |
 | `desktop-v<version>` | `openminion/desktop` workflow | signed installers or archives for each qualified platform | Desktop users |
+| `desktop-dev-v<version>-build.<number>` | `openminion/desktop` workflow | unsigned installers or archives for macOS, Linux, and Windows | Desktop development testing |
 
 Every release must include SHA-256 checksums. A runtime release also includes
 the machine-readable metadata used to update the public runtime manifest in
 [`openminion/openminion`](https://github.com/openminion/openminion).
+Development releases are marked as prereleases and never enter a stable update
+manifest. Runtime and Desktop versions are independent.
 
 ## Download flow
 
