@@ -68,13 +68,23 @@ enter that manifest.
 
 ## Desktop assets
 
-Desktop releases contain the installers or archives produced by the certified
-Desktop workflow for each supported platform, plus:
+Desktop releases contain only the binary installers or executable application
+archives produced by the certified Desktop workflow for each supported
+platform, plus:
 
 ```text
 desktop-release.json
 SHA256SUMS
 ```
+
+Optional platform signature and provenance files are also allowed. Do not
+upload Desktop source checkouts, source archives, repository exports, Electron
+project bundles, or unpacked project trees to this repository's releases.
+
+GitHub's automatic `Source code (zip)` and `Source code (tar.gz)` links cannot
+be removed from a tagged release. They snapshot this public release-policy
+repository only; they are not uploaded Desktop assets and do not contain the
+Desktop source repository.
 
 The release notes must state which platforms are signed, notarized, and
 clean-machine tested. An unsigned development build must not be presented as a

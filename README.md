@@ -32,14 +32,24 @@ committed to this Git repository.
 | --- | --- | --- | --- |
 | `runtime-v<version>-build.<number>` | private `openminion-packaging` workflow | paired `openminion` and `openminiond` executables for each qualified platform | OpenMinion Desktop and direct CLI users |
 | `runtime-dev-v<version>-build.<number>` | private `openminion-packaging` workflow | unsigned paired executables and verification sidecars for macOS, Linux, and Windows | Development testing and direct downloads |
-| `desktop-v<version>` | `openminion/desktop` workflow | signed installers or archives for each qualified platform | Desktop users |
-| `desktop-dev-v<version>-build.<number>` | `openminion/desktop` workflow | unsigned installers or archives for macOS, Linux, and Windows | Desktop development testing |
+| `desktop-v<version>` | `openminion/desktop` workflow | signed binary installers or application archives for each qualified platform | Desktop users |
+| `desktop-dev-v<version>-build.<number>` | `openminion/desktop` workflow | unsigned binary installers or application archives for macOS, Linux, and Windows | Desktop development testing |
 
 Every release must include SHA-256 checksums. A runtime release also includes
 the machine-readable metadata used to update the public runtime manifest in
 [`openminion/openminion`](https://github.com/openminion/openminion).
 Development releases are marked as prereleases and never enter a stable update
 manifest. Runtime and Desktop versions are independent.
+
+Desktop release assets are binary-only. Producers may upload installers,
+executable application archives, checksums, release metadata, and platform
+signature or provenance files. They must not upload Desktop source checkouts,
+source archives, repository exports, or unpacked project trees.
+
+GitHub automatically displays `Source code (zip)` and `Source code (tar.gz)`
+for every tagged release. Those links are snapshots of this small public
+release-policy repository, not the Desktop source repository or a Desktop
+release asset.
 
 ## Download flow
 
