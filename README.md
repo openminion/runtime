@@ -38,7 +38,9 @@ committed to this Git repository.
 Every release must include SHA-256 checksums. A runtime release also includes
 the machine-readable metadata used to update the public runtime manifest in
 [`openminion/openminion`](https://github.com/openminion/openminion).
-Development releases are marked as prereleases and never enter a stable update
+Development binaries use normal GitHub Releases so the download pages remain
+visible with the other releases. Their `-dev-` tags, manifests, and notes must
+identify them as unsigned and non-stable, and they never enter a stable update
 manifest. Runtime and Desktop versions are independent.
 
 Desktop release assets are binary-only. Producers may upload installers,

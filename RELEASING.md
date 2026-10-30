@@ -33,10 +33,13 @@ Release tags are immutable. If packaging changes without a new runtime source
 version, publish the next runtime build number instead of replacing an existing
 release.
 
-Development releases are always GitHub prereleases. Their release notes and
-machine-readable metadata must say that they are unsigned, not notarized, not
-stable-manifest eligible, and not automatic-update eligible. Runtime and
-Desktop versions are independent.
+Development binaries are normal GitHub Releases (`prerelease=false`). Their
+`-dev-` tags, release notes, and machine-readable metadata must say that they
+are unsigned, not notarized, not stable-manifest eligible, and not
+automatic-update eligible. Mark only the newest runtime CLI/daemon build as
+GitHub's `Latest`; publish Desktop development releases with `latest=false` so
+the shared repository has one unambiguous latest marker. Runtime and Desktop
+versions are independent.
 
 ## Runtime assets
 
@@ -93,8 +96,8 @@ supported Desktop release or stable update.
 ## Unsigned development fallback
 
 Until stable signing and qualification are available, every final OpenMinion
-source release must still publish a complete
-`runtime-dev-v<version>-build.<number>` prerelease containing paired CLI and
+source release must still publish a complete normal GitHub Release tagged
+`runtime-dev-v<version>-build.<number>` containing paired CLI and
 daemon binaries for macOS arm64, Linux x86_64, and Windows x86_64, every
 artifact `.json` and `.sha256` sidecar, `runtime-release.json`, and
 `SHA256SUMS`.
@@ -104,10 +107,10 @@ Linux, and Windows package under
 `desktop-dev-v<desktop-version>-build.<number>`, with `desktop-release.json`
 and `SHA256SUMS`. It does not inherit the runtime version.
 
-For both release families, download every public asset anonymously and verify
-all digests before deleting the producer's private transfer draft. Public
-availability does not waive signing, native trust, Desktop compatibility, or
-stable-manifest gates.
+For both release families, publish with `prerelease=false`, download every
+public asset anonymously, and verify all digests before deleting the producer's
+private transfer draft. Public availability does not waive signing, native
+trust, Desktop compatibility, or stable-manifest gates.
 
 ## Producer workflow
 
