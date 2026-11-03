@@ -22,3 +22,11 @@ Preferred types are `build`, `docs`, `fix`, `test`, and `chore`.
 
 Report security issues through [SECURITY.md](SECURITY.md) and follow
 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
+## Readability review
+
+All contributors and coding agents must follow the shared
+[comment and docstring rule](https://github.com/openminion/openminion/blob/dev/CODE_QUALITY.md#2-code-should-explain-itself)
+when editing validation scripts or policy. Review the final diff for redundant
+narration; preserve artifact/security contracts and required notices. This
+repository remains release-metadata-only.
